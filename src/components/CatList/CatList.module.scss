@@ -1,0 +1,46 @@
+.catList {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, 16rem);
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  place-items: center;
+
+  .catCard {
+    background-color: #f5f5f5;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: fit-content;
+    margin-bottom: 4rem;
+    
+
+    .imageWrapper {
+      position: relative;
+      
+      img: {
+        width: 12rem;
+      }
+
+      .cuteness {
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        height: 2.2rem;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 2.2rem;
+        z-index: 10;
+
+        p {
+          color: #fff;
+          font-size: 1.2rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
