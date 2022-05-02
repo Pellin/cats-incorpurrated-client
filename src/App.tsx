@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss'
+import catsData from './data/catdata.json'
 
 function App() {
+  const cats = catsData.cats
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <header>
+      <h1>CATS INCORPURRATE</h1>
+      <nav>
+        <label>Sorting</label>
+        <ul>
+          <li>None</li>
+          <li>Much cute</li>
+          <li>Not cute</li>
+        </ul>
+      </nav>
+      <div className="cat-grid">
+        <ul className="cat-list">
+          {cats.map((cat) => (
+            <li key={cat.name}>{cat.name}</li>
+          ))}
+        </ul>
+      </div>
+    </header>
+  )
 }
 
-export default App;
+export default App
