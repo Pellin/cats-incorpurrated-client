@@ -1,20 +1,21 @@
-import { CatListProps } from '../types'
+import { useContext } from 'react'
+import { Context } from '../../context/Context'
+import { Filter } from '../../context/types'
 import styles from './CatList.module.scss'
+import CatCard from './components/CatCard'
 
-const CatList = ({ cats }: CatListProps) => {
+const CatList = () => {
+  const { cats, filter } = useContext(Context)!
+
   return (
     <ul className={styles.catList}>
-      {cats.map((cat) => (
-        <li className={styles.catCard} key={cat.name}>
-          <div className={styles.imageWrapper}>
-            <img src={`/images/${cat.image}`} alt={cat.name} />
-            <div className={styles.cuteness}>
-              <p>{cat.cutenessLevel}</p>
-            </div>
-          </div>
-          <h3>{cat.name}</h3>
-        </li>
-      ))}
+      {cats
+        .filter((cat) =>
+          filter === Filter.NON_ALLERGY ? !cat.allergyInducingFur : true
+        )
+        .map((cat) => (
+          <CatCard cat={cat} />
+        ))}
     </ul>
   )
 }
