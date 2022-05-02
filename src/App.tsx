@@ -1,28 +1,19 @@
+import ContextProvider from './context/Context'
+import Header from './components/Header'
+import Layout from './components/Layout'
+import Menus from './components/Menus'
+import CatList from './components/CatList'
 import './App.scss'
-import catsData from './data/catdata.json'
 
 function App() {
-  const cats = catsData.cats
-
   return (
-    <header>
-      <h1>CATS INCORPURRATE</h1>
-      <nav>
-        <label>Sorting</label>
-        <ul>
-          <li>None</li>
-          <li>Much cute</li>
-          <li>Not cute</li>
-        </ul>
-      </nav>
-      <div className="cat-grid">
-        <ul className="cat-list">
-          {cats.map((cat) => (
-            <li key={cat.name}>{cat.name}</li>
-          ))}
-        </ul>
-      </div>
-    </header>
+    <ContextProvider>
+      <Header />
+      <Layout>
+        <Menus />
+        <CatList />
+      </Layout>
+    </ContextProvider>
   )
 }
 

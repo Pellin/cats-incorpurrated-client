@@ -1,0 +1,14 @@
+@import '../../settings.scss';
+
+.menus {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  min-width: 400px;
+  width: 100%;
+
+  @media (max-width: $breakpoint-desktop) {
+    flex-direction: column;
+  }
+}
