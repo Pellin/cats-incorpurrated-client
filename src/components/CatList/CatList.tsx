@@ -14,7 +14,7 @@ const CatList = () => {
           filter === Filter.NON_ALLERGY ? !cat.allergyInducingFur : true
         )
         .map((cat) => (
-          <CatCard cat={cat} />
+          <CatCard key={cat.name} cat={cat} />
         ))}
     </ul>
   )
