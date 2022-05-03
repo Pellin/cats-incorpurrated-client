@@ -3,7 +3,7 @@ import styles from '../CatList.module.scss'
 
 const CatCard = ({ cat }: CatCardProps) => {
   return (
-    <li className={styles.catCard} key={cat.name}>
+    <li aria-label="cat" className={styles.catCard} key={cat.name}>
       <div className={styles.imageWrapper}>
         <img src={`/images/${cat.image}`} alt={cat.name} />
       </div>

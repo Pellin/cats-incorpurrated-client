@@ -11,6 +11,8 @@
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
     "axios": "^0.27.2",
+    "eslint": "^8.14.0",
+    "msw": "^0.39.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
@@ -22,6 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:full": "react-scripts test --verbose --coverage --maxWorkers=25% watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,9 +45,14 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/index.tsx",
+      "<rootDir>/src/api/"
+    ]
+  },
   "description": "React client for Cats Incorpurrated",
   "main": "index.tsx",
-  "devDependencies": {},
   "keywords": [],
   "author": "Pelle Lindroth",
   "license": "ISC"

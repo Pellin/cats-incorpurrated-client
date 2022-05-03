@@ -21,8 +21,11 @@ header {
       font-size: 3rem;
       margin: 0;
 
-      @media (max-width: $breakpoint-desktop) {
+      @media (max-width: $breakpoint-tablet) {
         font-size: 2rem;
+      }
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1.4rem;
       }
     }
 
@@ -31,9 +34,14 @@ header {
       width: 4rem;
       margin-right: 1rem;
 
-      @media (max-width: $breakpoint-desktop) {
+      @media (max-width: $breakpoint-tablet) {
         height: 3rem;
         width: 3rem;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        height: 1.8rem;
+        width: 1.8rem;
       }
     }
   }

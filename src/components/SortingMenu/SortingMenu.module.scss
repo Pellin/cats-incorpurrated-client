@@ -1,3 +1,5 @@
+@import '../../settings.scss';
+
 .sortingMenu {
   display: flex;
 
@@ -11,6 +13,20 @@
       margin-right: 5px;
       height: 1rem;
       width: 1rem;
+
+      @media (max-width: $breakpoint-mobile) {
+        height: 0.6rem;
+        width: 0.6rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.2rem;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1rem;
+        margin: 0.6rem 0;
+      }
     }
   }
 
@@ -31,6 +47,10 @@
       height: fit-content;
       margin: 0 3px;
       padding: 2px 5px;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 0.8rem;
+      }
 
       &.active {
         border: 1px solid #000;

@@ -7,7 +7,7 @@ const SortingMenu = () => {
   const { sortingMethod, setSortingMethod } = useContext(Context)!
 
   return (
-    <nav className={styles.sortingMenu}>
+    <nav aria-label="sort" className={styles.sortingMenu}>
       <div className={styles.sortingHeader}>
         <img src="/images/sort-icon.png" alt="List icon" />
         <h3>Sort:</h3>

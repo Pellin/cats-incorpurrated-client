@@ -8,7 +8,9 @@
   min-width: 400px;
   width: 100%;
 
-  @media (max-width: $breakpoint-desktop) {
+  @media (max-width: $breakpoint-tablet) {
     flex-direction: column;
+    margin: 0.6rem auto 1.6rem;
+    min-width: none;
   }
 }

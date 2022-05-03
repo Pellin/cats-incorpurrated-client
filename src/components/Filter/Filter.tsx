@@ -7,7 +7,7 @@ const FilterMenu = () => {
   const { filter, setFilter } = useContext(Context)!
 
   return (
-    <nav className={styles.filter}>
+    <nav aria-label="filter" className={styles.filter}>
       <div className={styles.filterHeader}>
         <img src="/images/filter-icon.png" alt="Filter icon" />
         <h3>Show:</h3>
