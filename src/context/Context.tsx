@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { Cat, ContextInterface, Filter, Sorting } from './types'
 import catData from '../data/catdata.json'
+import { getCatData } from '../api'
 
 export const Context = React.createContext<ContextInterface | null>(null)
 
 const ContextProvider = (props: { children: React.ReactNode }) => {
-  const [cats, setCats] = useState<Cat[]>(catData.cats)
+  const [cats, setCats] = useState<Cat[]>([])
   const [sortingMethod, setSortingMethod] = useState<Sorting>(Sorting.NONE)
   const [filter, setFilter] = useState<Filter>(Filter.ALL)
+
+  useEffect(() => {
+    getCatData().then((data) => {
+      if (data.cats) {
+        setCats(data.cats)
+      }
+    })
+  }, [])
 
   useEffect(() => {
     switch (sortingMethod) {
