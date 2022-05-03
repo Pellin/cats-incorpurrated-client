@@ -4,7 +4,7 @@ import { Filter } from '../../context/types'
 import styles from './Filter.module.scss'
 
 const FilterMenu = () => {
-  const { cats, filter, setFilter } = useContext(Context)!
+  const { filter, setFilter } = useContext(Context)!
 
   return (
     <nav className={styles.filter}>
